@@ -1,0 +1,47 @@
+---
+alwaysApply: true
+---
+
+# AI Code Generation Rules for This Project
+
+### 1. Use Real SDKs and Libraries Only  
+- Always generate code strictly with official SDKs, libraries, and APIs documented by the platform (e.g., Aptos TypeScript SDK, Move standard library).  
+- Avoid inventing or mocking functions, classes, modules, or APIs that do not exist in the official SDK or language runtime.  
+- If uncertain about an SDK feature or function, check authoritative docs before generating code using it.
+
+### 2. Avoid Mock or Placeholder Functions  
+- Do not create mock implementations or dummy functions unless explicitly requested for testing purposes.  
+- When a feature depends on external APIs or modules, clearly indicate integration points but only generate code invoking real, documented interfaces.  
+- Prefer stubbing actual SDK calls in test code rather than in production logic.
+
+### 3. Provide Clear, Context-Rich Prompts and Requirements  
+- Include exact function names, parameter types, return types, and usage context in prompts to the AI to maximize accurate and precise code output.  
+- Use detailed natural language descriptions with constraints, expected behaviors, and interaction with existing modules/systems.  
+- Break down complex tasks into smaller logical sub-tasks and prompt sequentially for each part.
+
+### 4. Enforce Code Quality and Security  
+- Ensure the generated code follows established code style guidelines (e.g., consistent naming, formatting).  
+- Validate cryptography usage, authorization checks, and error handling conform to security best practices according to platform standards.  
+- Avoid insecure coding patterns such as unchecked user inputs, missing nonce/replay safeguards, or naive error swallowing.
+
+### 5. Require Code Review Before Integration  
+- Treat AI-generated code as production candidates only after thorough human code review and testing.  
+- Verify code correctness, efficiency, and alignment with business logic and design decisions.  
+- Include comments and documentation in generated code to aid reviewers and future maintenance.
+
+### 6. Document AI Usage and Attribution  
+- Clearly mark code segments generated or assisted by AI in comments for traceability.  
+- Keep a changelog of AI-assisted additions and highlight edits or corrections made post-generation.  
+- Document assumptions or uncertainties flagged during generation or review.
+
+### 7. Test Iteratively and Thoroughly  
+- Generate and maintain comprehensive unit and integration tests reflecting real use cases and edge conditions.  
+- Use static analysis and linting tools on all AI-generated code.  
+- Perform manual testing on critical flows like signing, transaction submission, and contract calls.
+
+### 8. Seek Clarifications When in Doubt  
+- If requirements or SDK capabilities are unclear, prompt for clarifications to avoid guessing or hallucination.  
+- Use authoritative sources (official docs, SDK repos) to verify before code generation.  
+- Request examples from SDK or platform documentation to align output code with standards.
+
+***

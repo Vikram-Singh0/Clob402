@@ -1,0 +1,33 @@
+{
+  "name": "clob402-monorepo",
+  "version": "1.0.0",
+  "description": "x402-style CLOB + Strategy Vault on Aptos",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "clean": "rm -rf backend/node_modules frontend/node_modules backend/dist frontend/.next"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "aptos",
+    "clob",
+    "defi",
+    "x402",
+    "move",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
