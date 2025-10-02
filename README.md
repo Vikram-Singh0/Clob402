@@ -14,16 +14,19 @@ A gasless, composable DeFi trading platform combining a Centralized Limit Order 
 ## 🏗️ Architecture
 
 ### Smart Contracts (Move)
+
 - **PaymentWithAuth**: Validates signed payment intents with nonce replay protection
 - **OrderBook**: Manages limit orders with price-time priority
 - **StrategyVault**: Handles deposits, shares, and copy-trading mechanics
 
 ### Backend (Node.js + TypeScript)
+
 - **Facilitator Service**: Verifies signatures and submits sponsored transactions
 - **API Endpoints**: REST API for orders, vaults, and payment authorization
 - **Nonce Management**: Prevents replay attacks with efficient caching
 
 ### Frontend (Next.js 14 + React)
+
 - **Wallet Integration**: Supports Petra, Martian, and other Aptos wallets
 - **Trading Interface**: Real-time order book and intuitive order placement
 - **Vault Dashboard**: Manage deposits, withdrawals, and track performance
@@ -144,16 +147,19 @@ Clob402/
 ### API Endpoints
 
 #### Payment Authorization
+
 - `POST /api/auth/request-intent` - Request payment intent (returns 402)
 - `POST /api/auth/submit-authorization` - Submit signed authorization
 
 #### Order Book
+
 - `POST /api/orders/place` - Place limit order
 - `POST /api/orders/cancel` - Cancel order
 - `GET /api/orders/user/:address` - Get user orders
 - `GET /api/orders/order/:orderId` - Get order details
 
 #### Strategy Vault
+
 - `POST /api/vault/deposit` - Deposit into vault
 - `POST /api/vault/withdraw` - Withdraw from vault
 - `GET /api/vault/shares/:address` - Get user shares
@@ -213,6 +219,7 @@ For detailed testing documentation, see [TESTING.md](./TESTING.md)
 #### Continuous Integration
 
 Tests run automatically on:
+
 - Every push to `main` or `develop`
 - All pull requests
 - Daily scheduled runs (2 AM UTC)
@@ -307,6 +314,7 @@ MIT License - see LICENSE file for details
 ## 💬 Support
 
 For questions and support:
+
 - Open an issue on GitHub
 - Join our Discord community
 - Check documentation at docs/
@@ -318,4 +326,3 @@ This is an MVP for demonstration purposes. Conduct thorough audits and testing b
 ---
 
 Built with ❤️ on Aptos
-

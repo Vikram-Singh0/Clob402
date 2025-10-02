@@ -9,6 +9,7 @@ This document provides an overview of the comprehensive testing infrastructure i
 **Location**: `backend/src/__tests__/`
 
 #### Test Files Created:
+
 - ✅ `setup.ts` - Test configuration and environment setup
 - ✅ `services/aptosService.test.ts` - Tests for Aptos SDK integration
 - ✅ `services/nonceService.test.ts` - Tests for nonce management
@@ -16,11 +17,13 @@ This document provides an overview of the comprehensive testing infrastructure i
 - ✅ `integration/healthCheck.test.ts` - Health check endpoint tests
 
 #### Configuration:
+
 - ✅ `jest.config.js` - Jest configuration with coverage settings
 - ✅ Updated `package.json` with test scripts
 - ✅ Added dependencies: `ts-jest`, `supertest`, `@types/supertest`
 
 #### Coverage:
+
 - Signature verification and construction
 - Nonce generation and validation
 - Payment authorization flow
@@ -32,9 +35,11 @@ This document provides an overview of the comprehensive testing infrastructure i
 **Location**: `move/tests/`
 
 #### Test Files Created:
+
 - ✅ `order_book_test.move` - Comprehensive order book tests
 
 #### Test Coverage:
+
 - ✅ Order book initialization
 - ✅ Order placement (bid/ask)
 - ✅ Order cancellation
@@ -57,6 +62,7 @@ All scripts are executable (`chmod +x` applied):
 ### 4. NPM Scripts
 
 **Root `package.json`**:
+
 ```json
 {
   "test:backend": "cd backend && npm test",
@@ -69,6 +75,7 @@ All scripts are executable (`chmod +x` applied):
 ```
 
 **Backend `package.json`**:
+
 ```json
 {
   "test": "jest --verbose",
@@ -82,6 +89,7 @@ All scripts are executable (`chmod +x` applied):
 **Location**: `.github/workflows/test.yml`
 
 #### Workflow Features:
+
 - ✅ Automated testing on push/PR
 - ✅ Daily scheduled test runs (2 AM UTC)
 - ✅ Parallel job execution
@@ -89,6 +97,7 @@ All scripts are executable (`chmod +x` applied):
 - ✅ Build verification
 
 #### Jobs:
+
 1. **Backend Tests** - Jest with coverage upload
 2. **Smart Contract Tests** - Move tests with Aptos CLI
 3. **Build Verification** - Frontend and backend builds
@@ -105,10 +114,12 @@ All scripts are executable (`chmod +x` applied):
 ### 7. Development Tools
 
 #### VSCode Configuration:
+
 - ✅ `.vscode/launch.json` - Debug configurations for Jest
 - ✅ `.vscode/settings.json` - Editor settings and exclusions
 
 #### Environment Templates:
+
 - ✅ `backend/.env.example` - Backend environment variables
 - ✅ `frontend/.env.local.example` - Frontend environment variables
 
@@ -130,28 +141,34 @@ npm run test:coverage
 ### Regular Testing Workflow
 
 #### Before Committing:
+
 ```bash
 npm run test:backend
 ```
 
 #### Before Pull Request:
+
 ```bash
 npm run test:all
 ```
 
 #### Before Deployment:
+
 ```bash
 npm run verify:all
 ```
 
 ### Watch Mode (Development):
+
 ```bash
 cd backend
 npm run test:watch
 ```
 
 ### Debugging Tests:
+
 Use VSCode debugger:
+
 1. Open test file
 2. Press F5 or use "Jest: Current File" launch config
 3. Set breakpoints as needed
@@ -165,6 +182,7 @@ Use VSCode debugger:
 **Total Tests**: 40+ test cases
 
 **Coverage Areas**:
+
 - ✅ Nonce Service (100% coverage target)
 - ✅ Aptos Service (signature verification)
 - ✅ Payment Auth Routes (all endpoints)
@@ -176,6 +194,7 @@ Use VSCode debugger:
 **Test Functions**: 12+ test cases
 
 **Coverage Areas**:
+
 - ✅ Order placement
 - ✅ Order cancellation
 - ✅ Order filling
@@ -187,6 +206,7 @@ Use VSCode debugger:
 ### GitHub Actions
 
 **Triggers**:
+
 - Push to `main` or `develop`
 - Pull requests
 - Daily at 2 AM UTC
@@ -198,6 +218,7 @@ Use VSCode debugger:
 ### Local Pre-commit
 
 (Optional) Install Husky for pre-commit hooks:
+
 ```bash
 npm install --save-dev husky
 npx husky install
@@ -206,10 +227,12 @@ npx husky install
 ## 📈 Coverage Goals
 
 ### Current Status:
+
 - Backend: ~80% coverage (baseline)
 - Smart Contracts: Core functionality covered
 
 ### Target Goals:
+
 - Backend: 90%+ coverage
 - Smart Contracts: 95%+ coverage
 - Integration: All critical paths tested
@@ -252,19 +275,19 @@ aptos move test --filter order_book_tests
 ### Backend Test Template:
 
 ```typescript
-import { describe, it, expect, beforeEach, jest } from '@jest/globals';
+import { describe, it, expect, beforeEach, jest } from "@jest/globals";
 
-describe('YourFeature', () => {
+describe("YourFeature", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  describe('specificFunction', () => {
-    it('should handle valid input', () => {
+  describe("specificFunction", () => {
+    it("should handle valid input", () => {
       // Test implementation
     });
 
-    it('should reject invalid input', () => {
+    it("should reject invalid input", () => {
       // Test implementation
     });
   });
@@ -294,6 +317,7 @@ module clob_strategy_vault::your_module_tests {
 ## 🎯 Best Practices
 
 ### DO:
+
 ✅ Write tests for new features immediately
 ✅ Test both success and failure cases
 ✅ Keep tests isolated and independent
@@ -302,6 +326,7 @@ module clob_strategy_vault::your_module_tests {
 ✅ Run tests before committing
 
 ### DON'T:
+
 ❌ Skip tests to save time
 ❌ Commit failing tests
 ❌ Test implementation details
@@ -330,4 +355,3 @@ If tests are failing or you need help:
 
 **Last Updated**: October 2, 2025
 **Test Infrastructure Version**: 1.0.0
-
