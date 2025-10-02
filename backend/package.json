@@ -7,7 +7,9 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "jest"
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "aptos",
@@ -33,7 +35,10 @@
     "typescript": "^5.3.3",
     "tsx": "^4.7.1",
     "jest": "^29.7.0",
-    "@types/jest": "^29.5.12"
+    "@types/jest": "^29.5.12",
+    "ts-jest": "^29.1.1",
+    "supertest": "^6.3.3",
+    "@types/supertest": "^6.0.2"
   }
 }
 

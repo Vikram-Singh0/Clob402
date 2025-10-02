@@ -161,19 +161,63 @@ Clob402/
 
 ### Testing
 
+We have comprehensive testing infrastructure covering backend services, smart contracts, and build verification.
+
+#### Quick Test Commands
+
 ```bash
-# Test Move contracts
-cd move
-aptos move test
+# Run all tests (backend + smart contracts)
+npm run test:all
 
-# Test backend
-cd backend
-npm run test
+# Run backend tests only
+npm run test:backend
 
-# Build for production
-cd frontend
-npm run build
+# Run smart contract tests only
+npm run test:contracts
+
+# Run backend tests with coverage report
+npm run test:coverage
+
+# Verify all builds
+npm run verify:build
+
+# Run all tests + build verification
+npm run verify:all
 ```
+
+#### Test Scripts
+
+```bash
+# Make scripts executable (first time only)
+chmod +x scripts/*.sh
+
+# Run comprehensive test suite with reporting
+./scripts/test-all.sh
+
+# Run backend tests with coverage
+./scripts/test-backend.sh
+
+# Run smart contract tests
+./scripts/test-contracts.sh
+```
+
+#### Test Coverage
+
+- **Backend Unit Tests**: Services, routes, and utilities (Jest)
+- **Smart Contract Tests**: Order book, payment auth, vault logic (Move)
+- **Integration Tests**: API endpoints and health checks
+- **Build Tests**: TypeScript compilation and production builds
+
+For detailed testing documentation, see [TESTING.md](./TESTING.md)
+
+#### Continuous Integration
+
+Tests run automatically on:
+- Every push to `main` or `develop`
+- All pull requests
+- Daily scheduled runs (2 AM UTC)
+
+View test results in the [Actions tab](../../actions)
 
 ## 🌐 Deployment
 
